@@ -45,3 +45,8 @@ FOR CHANNEL 'master2';`
 #### Остановка слейва
 `STOP SLAVE FOR CHANNEL 'master2';` - multi-source
 `STOP SLAVE` - single-source
+
+#### Показать статус мастера
+```sql 
+SHOW MASTER STATUS;
+```
