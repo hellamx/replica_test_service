@@ -17,7 +17,7 @@
 `SHOW SLAVE 'master2' STATUS;`
 
 #### Пример настроек слейва (multi-source)
-`-- Канал для master1
+```sql
 CHANGE MASTER TO
 MASTER_HOST='xxx',
 MASTER_USER='repl',
@@ -25,8 +25,9 @@ MASTER_PASSWORD='pass',
 MASTER_LOG_FILE='mysql-bin.000001',
 MASTER_LOG_POS=456
 FOR CHANNEL 'master1';
+```
 
--- Канал для master2
+```sql 
 CHANGE MASTER TO
 MASTER_HOST='xxx',
 MASTER_USER='repl',
@@ -34,6 +35,8 @@ MASTER_PASSWORD='pass',
 MASTER_LOG_FILE='mysql-bin.000002',
 MASTER_LOG_POS=123
 FOR CHANNEL 'master2';`
+
+```
 
 #### Запуск слейва
 `START SLAVE FOR CHANNEL 'master1';` - multi-source
